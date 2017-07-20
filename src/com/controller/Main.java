@@ -9,7 +9,7 @@ public class Main {
         
         mainWindow.setController(controller);
         model.setController(controller);
-        
+        System.out.println("He sido escrito desde git");
         controller.setMainWindow(mainWindow);
         controller.setModel(model);
     }
