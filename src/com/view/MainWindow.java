@@ -321,4 +321,5 @@ public class MainWindow extends javax.swing.JFrame {
     
     private Controller sController;
     private Book[] sBook;
+    private Book[] mBook;
 }
