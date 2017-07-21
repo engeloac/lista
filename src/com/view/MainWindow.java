@@ -182,7 +182,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        if (!controller.addNodeInit(jTextField1.getText(), jTextField2.getText()))
+        if (!sController.addNodeInit(jTextField1.getText(), jTextField2.getText()))
             JOptionPane.showMessageDialog(null, "Error al procesar los datos verifiquelos");
         else updateList();
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -199,13 +199,13 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       if (!controller.addNodeEnd(jTextField1.getText(), jTextField2.getText()))
+       if (!sController.addNodeEnd(jTextField1.getText(), jTextField2.getText()))
            JOptionPane.showMessageDialog(null, "Error al procesar los datos verifiquelos");
        else updateList();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        if (!controller.addNodeAfter(jTextField1.getText(), jTextField2.getText(), jTextField3.getText()))
+        if (!sController.addNodeAfter(jTextField1.getText(), jTextField2.getText(), jTextField3.getText()))
             JOptionPane.showMessageDialog(null, "Error al procesar los datos");
         else {
             JOptionPane.showMessageDialog(null, "Actualizando la lista");
@@ -302,8 +302,8 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private void updateList() {
-        Book[] book = new Book[controller.sizeList()];
-        if((book =controller.showList()) != null) {
+        Book[] book = new Book[sController.sizeList()];
+        if((book =sController.showList()) != null) {
             restoreJtable();
             updateJTable(book);
         }
@@ -311,14 +311,14 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     /**
-     *Metodo que actualiza el estado del objeto this.controller
-     *@param controller
-     *Parametro de tipo com.controller.Controller
+     *Metodo que actualiza el estado del objeto this.sController
+     *@param sController
+     *Parametro de tipo com.sController.Controller
      */
-    public void setController(com.controller.Controller controller) {
-        this.controller = controller;
+    public void setController(Controller sController) {
+        this.sController = sController;
     }
     
-    private Controller controller;
-    private Book[] book;
+    private Controller sController;
+    private Book[] sBook;
 }

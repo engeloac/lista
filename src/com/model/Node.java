@@ -13,26 +13,26 @@ import com.progr.objects.Book;
  */
 public class Node {
     public Node(Book book) {
-        this.book = book;
-        this.next = null;
+        this.sBook = book;
+        this.sNext = null;
     }
 
     public Book getBook() {
-        return book;
+        return sBook;
     }
 
     public void setBook(Book book) {
-        this.book = book;
+        this.sBook = book;
     }
 
     public com.model.Node getNext() {
-        return next;
+        return sNext;
     }
 
     public void setNext(com.model.Node next) {
-        this.next = next;
+        this.sNext = next;
     }
     
-    private Book book;
-    private com.model.Node next;
+    private Book sBook;
+    private Node sNext;
 }

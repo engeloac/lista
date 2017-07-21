@@ -12,27 +12,27 @@ package com.model;
  */
 public class List {
     public List(){
-        init = null;
-        size = -1;
+        sInit = null;
+        sSize = -1;
     }
     
     public Node getInit() {
-        return init;
+        return sInit;
     }
     
     public int getSize() {
-        return size;
+        return sSize;
     }
     
     public void setSize(int SIZE) {
-        this.size = SIZE;
+        this.sSize = SIZE;
     }
 
     public void setInit(Node init) {
-        this.init = init;
+        this.sInit = init;
     }
-    private Node init;
-    private int size;
+    private Node sInit;
+    private int sSize;
 
     
 }

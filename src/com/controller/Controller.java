@@ -19,8 +19,8 @@ import com.view.MainWindow;
 public class Controller {
     
     public Controller() {
-        list = new List();
-        model = new Model();
+        sList = new List();
+        sModel = new Model();
     }
     
     /**
@@ -31,8 +31,8 @@ public class Controller {
      */
     public boolean addNodeInit(String name, String cost) {
         if (validateString(cost)){
-            list.setSize(list.getSize() + 1);
-            list.setInit(model.addNodeInit(name,convertedString,list.getInit()));
+            sList.setSize(sList.getSize() + 1);
+            sList.setInit(sModel.addNodeInit(name,sConvertedString,sList.getInit()));
             return true;
         }
         else return false;
@@ -40,8 +40,8 @@ public class Controller {
     
     public boolean addNodeAfter(String name, String cost,String position) {
         if (validateString(cost, position)) {
-            list.setSize(list.getSize() + 1);
-            list.setInit(model.addNodeAfter(name, convertedString, convertedString, convertedString, list.getInit()));
+            sList.setSize(sList.getSize() + 1);
+            sList.setInit(sModel.addNodeAfter(name, sConvertedString, sConvertedString, sConvertedString, sList.getInit()));
             return true;
         }
         else return false;
@@ -49,8 +49,8 @@ public class Controller {
     
     public boolean addNodeEnd(String name, String cost) {
         if (validateString(cost)) {
-            list.setSize(list.getSize() + 1);
-            list.setInit(model.addNodeEnd(name, convertedString, list.getInit()));
+            sList.setSize(sList.getSize() + 1);
+            sList.setInit(sModel.addNodeEnd(name, sConvertedString, sList.getInit()));
             return true;
         }
         else return false;
@@ -58,7 +58,7 @@ public class Controller {
     
     private boolean validateString(String cost) {
         try {
-            convertedString = Integer.parseInt(cost);
+            sConvertedString = Integer.parseInt(cost);
             return true;
         } catch (Exception e) {
             return  false;
@@ -67,8 +67,8 @@ public class Controller {
     
     private boolean validateString(String cost, String position) {
         try{
-            convertedString = Integer.parseInt(cost);
-            convertedString2 = Integer.parseInt(position);
+            sConvertedString = Integer.parseInt(cost);
+            sConvertedString2 = Integer.parseInt(position);
             return true;
         } catch (Exception exception) {
             return false;
@@ -80,9 +80,9 @@ public class Controller {
      * @return Devuelve en array de libros
      */
     public Book[] showList() {
-        if(list.getSize() >= 0){
+        if(sList.getSize() >= 0){
             Book[] book = new Book[sizeList()];
-            book = model.showList(list.getInit(),list.getSize());
+            book = sModel.showList(sList.getInit(),sList.getSize());
             return book;
         } 
         else return null;
@@ -93,31 +93,31 @@ public class Controller {
      * @return size + 1
      */
     public int sizeList(){
-        int size = model.sizeList(list.getInit());
-        list.setSize(size);
+        int size = sModel.sizeList(sList.getInit());
+        sList.setSize(size);
         return size + 1;
     }
     /**
-     * Metodo que establece el valor de la varible mainWindow
+     * Metodo que establece el valor de la varible sMainWindow
      * @param mainWindow Sera igualado a la variable del mismo nombre de la clase
      */
     void setMainWindow(com.view.MainWindow mainWindow) {
-       this.mainWindow = mainWindow;
+       this.sMainWindow = mainWindow;
     }
     
     /**
-     * Metodo que establece el valor de la varible mainWindow
+     * Metodo que establece el valor de la varible sMainWindow
      * @param model Sera igualado a la variable del mismo nombre de la clase
      */
     void setModel(com.model.Model model) {
-        this.model = model;
+        this.sModel = model;
     }
     
     
-    private Model model;
-    private MainWindow mainWindow;
-    private List list;
-    private int convertedString;
-    private int convertedString2;
-    private Book[] book;
+    private Model sModel;
+    private MainWindow sMainWindow;
+    private List sList;
+    private int sConvertedString;
+    private int sConvertedString2;
+    private Book[] sBook;
 }

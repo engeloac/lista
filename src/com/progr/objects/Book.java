@@ -2,26 +2,26 @@ package com.progr.objects;
 
 public class Book {
 
-    public Book(String name, int cost) {
-        this.name = name;
-        this.cost = cost;
+    public Book(String sName, int sCost) {
+        this.sName = sName;
+        this.sCost = sCost;
     }
 
     public String getName() {
-        return name;
+        return sName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String sName) {
+        this.sName = sName;
     }
 
     public int getCost() {
-        return cost;
+        return sCost;
     }
 
-    public void setCost(int cost) {
-        this.cost = cost;
+    public void setCost(int sCost) {
+        this.sCost = sCost;
     }
-    private String name;
-    private int cost;
+    private String sName;
+    private int sCost;
 }

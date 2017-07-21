@@ -18,47 +18,47 @@ import com.progr.objects.Book;
  */
 public class Model {
     public Model() {
-        write = new com.model.services.Write();
-        find = new com.model.services.Find();
+        sWrite = new com.model.services.Write();
+        sFind = new com.model.services.Find();
     }
     
     public void setController(Controller controller) {
-        this.controller = controller;
+        this.sController = controller;
     }
     
     public Node addNodeInit(String name, int cost, Node init) {
         Book book = new Book(name, cost);
-        return write.addNodeInit(book, init);
+        return sWrite.addNodeInit(book, init);
     }
     
     public Node addNodeAfter(String name, int cost,int position, int size, Node node) {
-        return write.addNodeAfter(new Book(name, cost), position, node);
+        return sWrite.addNodeAfter(new Book(name, cost), position, node);
     }
     
     public Node addNodeEnd(String name, int cost, Node init) {
         Book book = new Book(name, cost);
-        return write.addNodeEnd(book, init);
+        return sWrite.addNodeEnd(book, init);
     }
     
     public Book[] showList(Node node, int size) {
         if( size >= 0 ){
             Book[] book;
             int position = 0;
-            book = find.showList(node,size);
+            book = sFind.showList(node,size);
             return book;
         }
         return null;
     }
     
     public int sizeList(Node init) {
-        int size = find.sizeList(init);
+        int size = sFind.sizeList(init);
         return size;
     }
     
-    private List list;
-    private Controller controller;
-    private Delete delete;
-    private Find find;
-    private Update update;
-    private Write write;
+    private List sList;
+    private Controller sController;
+    private Delete sDelete;
+    private Find sFind;
+    private Update sUpdate;
+    private Write sWrite;
 }

@@ -12,36 +12,36 @@ package com.progr.objects;
 public class Persona {
 
     public Persona(String nombre, String apellido, int edad) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
+        this.sNombre = nombre;
+        this.sApellido = apellido;
+        this.sEdad = edad;
     }
 
     public String getNombre() {
-        return nombre;
+        return sNombre;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.sNombre = nombre;
     }
 
     public String getApellido() {
-        return apellido;
+        return sApellido;
     }
 
     public void setApellido(String apellido) {
-        this.apellido = apellido;
+        this.sApellido = apellido;
     }
 
     public int getEdad() {
-        return edad;
+        return sEdad;
     }
 
     public void setEdad(int edad) {
-        this.edad = edad;
+        this.sEdad = edad;
     }
     
-    private String nombre;
-    private String apellido;
-    private int edad;
+    private String sNombre;
+    private String sApellido;
+    private int sEdad;
 }
